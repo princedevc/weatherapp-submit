@@ -1,0 +1,118 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Nunito",sans-serif;
+  background: #f8f8f8;
+  /* background-image: url(cloud.jpg) no-repeat; */
+  
+}
+
+.input{
+  text-align: center;
+  margin: 100px auto;
+}
+
+input[type="submit"]{
+  padding: 15px 30px;
+  background: #e7e7e7;
+  border: none;
+  border-radius: 1px;
+  font-family: "Nunito",sans-serif;
+  font-weight:bold;
+  font-size: 20px;
+  
+}
+
+.input input[type="text"]{
+  width: 600px;
+  height: 55px;
+  padding: 5px 10px;
+  background: #e7e7e7;
+  border: none;
+  border-radius: 1px;
+  font-family: "Nunito",sans-serif;
+  font-weight:bold;
+  font-size: 20px;
+}
+
+.header button {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  margin-right: 16px;
+  opacity: 0.54;
+  outline: none;
+  overflow: hidden;
+  text-indent: -30000px;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+  width: 24px;
+}
+
+.header #butRefresh {
+  background: url(/images/refresh.svg) center center no-repeat;
+}
+
+.header #butInstall {
+  background: url(/images/install.svg) center center no-repeat;
+}
+
+.card{
+  width: 50%;
+  background: #e7e7e7;
+  height: 40vh;
+  margin: 50px auto;
+  border-radius: 2px;
+}
+
+
+.close{
+  float: right;
+  margin-top: -2px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.card h1{
+  padding: 5px 0;
+  text-align: center;
+}
+
+.card p{
+  text-align: center;
+  margin:40px 0;
+  font-size:20px;
+}
+
+/**
+ * Media query to adjust size of content for small screens
+ */
+
+ @media (max-width: 450px) {
+  .weather-card .date,
+  .weather-card .description {
+    font-size: 0.9em;
+  }
+
+  .weather-card .current .icon {
+    height: 96px;
+    width: 96px;
+  }
+
+  .weather-card .current .visual {
+    font-size: 3em;
+  }
+
+  .weather-card .future .oneday .icon {
+    height: 32px;
+    width: 32px;
+  }
+}
+@media all and (display-mode: standalone) {
+  body {
+    background-color: yellow;
+  }
+}

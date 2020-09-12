@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="weather" content="your-first-pwa-v3">
+  <meta name="theme-color" content="#2F3BA2" />
+   <!--  iOS meta tags and icons -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Weather PWA">
+<link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+<link rel="icon" href="/images/favicon.ico" type="image/svg" />
+<!-- Description  -->
+<meta name="description" content="A sample weather app">
+  <title>OpenWeatherMap Api</title>
+  <style>
+    .header {
+      align-content: center;
+      align-items: stretch;
+      background: #3f51b5;
+      box-shadow:
+        0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 2px 9px 1px rgba(0, 0, 0, 0.12),
+        0 4px 2px -2px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-size: 20px;
+      height: 56px;
+      justify-content: flex-start;
+      padding: 16px 16px 0 16px;
+      /* position: fixed; */
+      transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+      width: 100%;
+      will-change: transform;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      flex: 1;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- <div class="main">
+    <div class="header">
+      <h1>OpenWeatherMap API</h1>
+      <p>Enter any city name in the input box below to get the data</p>
+    </div> -->
+    <header class="header">
+      <h1>
+        Weather PWA
+        
+      </h1>
+    <button id="butInstall" aria-label="Install" hidden></button>
+    <button id="butRefresh" aria-label="Refresh"></button>
+    </header>
+  
+    <div class="input">
+      <input type="text" placeholder="Enter the city" class="input_text" aria-label="City to add">
+      <input type="submit" value="Submit" class="submit" aria-label="submit">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1 class="name" id="name"></h1>
+      <p class="temp"></p>
+      <p class="clouds"></p>
+      <p class="desc"></p>
+    </div>
+  </div>
+<script src="app.js"></script>
+<script src="install.js"></script>
+<script src="luxon-1.11.4.js"></script>
+<script> 
+// Register service worker.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../service-worker.js')
+          .then((reg) => {
+            console.log('Service worker registered.', reg);
+          });
+    });
+  }
+  </script>
+</body>
+</html>
